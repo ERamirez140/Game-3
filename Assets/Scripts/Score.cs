@@ -10,6 +10,11 @@ public class Score : MonoBehaviour {
     public static Text scoreBoard;
     public static Text winText;
     private static Score instance;
+    public static bool g1red = false, g1blue = false;
+    public static bool g2red = false, g2blue = false;
+    public static bool g3red = false, g3blue = false;
+    public static bool g4red = false, g4blue = false;
+
     // Use this for initialization
     void Awake()
     {

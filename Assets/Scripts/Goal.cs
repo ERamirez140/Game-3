@@ -26,14 +26,16 @@ public class Goal : MonoBehaviour {
             {
                 hasWon = true;
                 winnerText.text = "RED WINS!!";
-                Score.redScore += 1;
+                //Score.redScore += 1;
+                Score.g1red = true;
                 Invoke("callRestart", 3.0f);
             }
             if (c.gameObject.tag == "PlayerTwo")
             {
                 hasWon = true;
                 winnerText.text = "BLUE WINS!!";
-                Score.blueScore += 1;
+                //Score.blueScore += 1;
+                Score.g1blue = true;
                 Invoke("callRestart", 3.0f);
             }
         }
@@ -41,7 +43,10 @@ public class Goal : MonoBehaviour {
     void callRestart()
     {
         winnerText.text = " ";
-         SceneManager.LoadScene(1);
+        if ((Score.g1red && Score.g2red && Score.g3red && Score.g4red) || (Score.g1blue && Score.g2blue && Score.g3blue && Score.g4blue))
+            SceneManager.LoadScene(5);
+        else
+            SceneManager.LoadScene(2);
     }
 
 }

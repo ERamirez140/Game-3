@@ -36,8 +36,8 @@ public class CannonFire : MonoBehaviour {
     
 	// Update is called once per frame
 	void Fire () {
-        if(speed < 25)
-        speed *= 1.05f;
+        if(speed < 40)
+        speed *= 1.1f;
             fire = Random.Range(1, 12);
         if (fire <= 3)
             Upper(fire);
